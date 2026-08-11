@@ -71,17 +71,17 @@ export default function Header() {
         <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 py-2 md:py-3 flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '9px', width: 'fit-content', flexShrink: 0 }}>
-            <img src="/logo_cropped.png" alt="Altura 1800" style={{ width: '48px', height: '58px', objectFit: 'contain', flexShrink: 0 }} />
+          <Link href="/" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', width: 'fit-content', flexShrink: 0 }}>
+            <img src="/logo_cropped.png" alt="Altura 1800" style={{ width: '60px', height: '72px', objectFit: 'contain', flexShrink: 0 }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 'max-content', lineHeight: 1 }}>
-              <div style={{ fontFamily: 'serif', fontSize: '18px', fontWeight: 500, letterSpacing: '0.08em', color: '#F1E8D8', whiteSpace: 'nowrap' }}>ALTURA</div>
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '7px', marginTop: '4px', color: '#C6A15B', fontSize: '13px', letterSpacing: '0.15em' }}>
-                <span style={{ display: 'block', width: '9px', height: '1px', background: '#C6A15B' }}></span>
+              <div style={{ fontFamily: 'serif', fontSize: '22px', fontWeight: 500, letterSpacing: '0.08em', color: '#F1E8D8', whiteSpace: 'nowrap' }}>ALTURA</div>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '7px', marginTop: '4px', color: '#C6A15B', fontSize: '16px', letterSpacing: '0.15em' }}>
+                <span style={{ display: 'block', width: '12px', height: '1px', background: '#C6A15B' }}></span>
                 <span>1800</span>
-                <span style={{ display: 'block', width: '9px', height: '1px', background: '#C6A15B' }}></span>
+                <span style={{ display: 'block', width: '12px', height: '1px', background: '#C6A15B' }}></span>
               </div>
-              <div style={{ marginTop: '5px', fontSize: '7px', fontWeight: 500, letterSpacing: '0.20em', color: '#9B793B', whiteSpace: 'nowrap' }}>CAFÉ DE ALTURA</div>
+              <div style={{ marginTop: '5px', fontSize: '9px', fontWeight: 500, letterSpacing: '0.20em', color: '#9B793B', whiteSpace: 'nowrap' }}>CAFÉ DE ALTURA</div>
             </div>
           </Link>
 
