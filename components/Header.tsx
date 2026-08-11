@@ -27,16 +27,49 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
-      {/* Top Bar */}
-      <div className="w-full bg-[#000000] py-2 hidden md:block">
-        <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 grid grid-cols-3 items-center">
-          <div className="col-span-1"></div>
-          <div className="col-span-1 text-center flex justify-center">
-            <p className="text-[7px] lg:text-[9px] tracking-[0.1em] lg:tracking-[0.2em] text-[#9B793B] uppercase font-light whitespace-nowrap">
-              ENVÍOS A TODO COLOMBIA <span className="mx-1 lg:mx-2 text-cream/20">|</span> PAGOS 100% SEGUROS
-            </p>
-          </div>
-          <div className="col-span-1 hidden min-[1200px]:flex justify-end items-center gap-[18px]">
+
+
+      {/* Main Header */}
+      <div className="w-full bg-[#000000]">
+        <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 py-3 md:py-4 flex items-center justify-between">
+
+          {/* Logo */}
+          <Link href="/" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '9px', width: 'fit-content', flexShrink: 0 }}>
+            <img src="/logo_cropped.png" alt="Altura 1800" style={{ width: '48px', height: '58px', objectFit: 'contain', flexShrink: 0 }} />
+
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 'max-content', lineHeight: 1 }}>
+              <div style={{ fontFamily: 'serif', fontSize: '18px', fontWeight: 500, letterSpacing: '0.08em', color: '#F1E8D8', whiteSpace: 'nowrap' }}>ALTURA</div>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '7px', marginTop: '4px', color: '#C6A15B', fontSize: '13px', letterSpacing: '0.15em' }}>
+                <span style={{ display: 'block', width: '9px', height: '1px', background: '#C6A15B' }}></span>
+                <span>1800</span>
+                <span style={{ display: 'block', width: '9px', height: '1px', background: '#C6A15B' }}></span>
+              </div>
+              <div style={{ marginTop: '5px', fontSize: '7px', fontWeight: 500, letterSpacing: '0.20em', color: '#9B793B', whiteSpace: 'nowrap' }}>CAFÉ DE ALTURA</div>
+            </div>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden min-[1200px]:flex flex-1 justify-center items-center gap-[27px] font-sans text-[10px] font-medium tracking-[0.03em] uppercase leading-none mx-8">
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative transition-colors duration-200 ease-in-out whitespace-nowrap ${isActive ? 'text-[#C6A15B]' : 'text-[#E8E4DC] hover:text-[#C6A15B]'}`}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span className="absolute -bottom-[6px] left-1/2 -translate-x-1/2 w-[16px] h-[1px] bg-[#C6A15B]" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Desktop Right (Icons + Button) */}
+          <div className="hidden min-[1200px]:flex items-center justify-end w-fit shrink-0 gap-[24px]">
+            {/* Search Icon */}
             <button className="text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
@@ -62,51 +95,11 @@ export default function Header() {
                 </span>
               )}
             </Link>
-          </div>
-        </div>
-      </div>
 
-      {/* Main Header */}
-      <div className="w-full bg-[#000000]">
-        <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 py-3 md:py-4 flex items-center justify-between">
-          
-          {/* Logo */}
-          <Link href="/" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '9px', width: 'fit-content', flexShrink: 0 }}>
-            <img src="/logo_cropped.png" alt="Altura 1800" style={{ width: '48px', height: '58px', objectFit: 'contain', flexShrink: 0 }} />
-            
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 'max-content', lineHeight: 1 }}>
-              <div style={{ fontFamily: 'serif', fontSize: '18px', fontWeight: 500, letterSpacing: '0.08em', color: '#F1E8D8', whiteSpace: 'nowrap' }}>ALTURA</div>
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '7px', marginTop: '4px', color: '#C6A15B', fontSize: '13px', letterSpacing: '0.15em' }}>
-                <span style={{ display: 'block', width: '9px', height: '1px', background: '#C6A15B' }}></span>
-                <span>1800</span>
-                <span style={{ display: 'block', width: '9px', height: '1px', background: '#C6A15B' }}></span>
-              </div>
-              <div style={{ marginTop: '5px', fontSize: '7px', fontWeight: 500, letterSpacing: '0.20em', color: '#9B793B', whiteSpace: 'nowrap' }}>CAFÉ DE ALTURA</div>
-            </div>
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden min-[1200px]:flex flex-1 justify-center items-center gap-[30px] font-sans text-[11px] font-medium tracking-[0.04em] uppercase leading-none mx-8">
-            {links.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`transition-colors duration-200 ease-in-out whitespace-nowrap ${isActive ? 'text-[#C6A15B]' : 'text-[#E8E4DC] hover:text-[#C6A15B]'}`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Desktop Right (Button Only) */}
-          <div className="hidden min-[1200px]:flex items-center justify-end w-fit shrink-0">
             {/* Buy Button */}
             <Link
               href="/tienda"
-              className="px-[20px] h-[36px] flex items-center justify-center bg-[#C6A15B] text-[#FFFDF7] text-[10px] font-semibold tracking-[0.06em] uppercase rounded-[18px] hover:bg-opacity-90 transition-all whitespace-nowrap"
+              className="px-[20px] h-[36px] flex items-center justify-center bg-[#C6A15B] text-[#FFFDF7] text-[10px] font-semibold tracking-[0.06em] uppercase rounded-[18px] hover:bg-opacity-90 transition-all whitespace-nowrap ml-2"
             >
               COMPRAR AHORA
             </Link>
