@@ -36,8 +36,32 @@ export default function Header() {
               ENVÍOS A TODO COLOMBIA <span className="mx-1 lg:mx-2 text-cream/20">|</span> PAGOS 100% SEGUROS
             </p>
           </div>
-          <div className="col-span-1 flex justify-end items-center gap-4 lg:gap-6">
-            {/* Icons moved to Main Header */}
+          <div className="col-span-1 hidden min-[1200px]:flex justify-end items-center gap-[18px]">
+            <button className="text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg>
+            </button>
+
+            {/* Account Icon */}
+            <Link href="/mi-cuenta" className="flex items-center gap-2 text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg>
+              <span className="text-[10px] font-sans font-medium tracking-[0.04em]">Mi cuenta</span>
+            </Link>
+
+            {/* Cart Icon */}
+            <Link href="/carrito" className="relative text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+              </svg>
+              {count > 0 && (
+                <span className="absolute -top-2 -right-3 bg-[#C6A15B] text-ink text-[9px] rounded-full w-4 h-4 flex items-center justify-center font-bold">
+                  {count}
+                </span>
+              )}
+            </Link>
           </div>
         </div>
       </div>
@@ -80,38 +104,8 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Desktop Right (Icons + Button) */}
-          <div className="hidden min-[1200px]:flex flex-col items-end justify-center gap-3 w-fit shrink-0">
-            {/* Icons Row */}
-            <div className="flex items-center gap-[18px]">
-              {/* Search Icon */}
-              <button className="text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                </svg>
-              </button>
-
-              {/* Account Icon */}
-              <Link href="/mi-cuenta" className="flex items-center gap-2 text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                </svg>
-                <span className="text-[10px] font-sans font-medium tracking-[0.04em]">Mi cuenta</span>
-              </Link>
-
-              {/* Cart Icon */}
-              <Link href="/carrito" className="relative text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                </svg>
-                {count > 0 && (
-                  <span className="absolute -top-2 -right-3 bg-[#C6A15B] text-ink text-[9px] rounded-full w-4 h-4 flex items-center justify-center font-bold">
-                    {count}
-                  </span>
-                )}
-              </Link>
-            </div>
-
+          {/* Desktop Right (Button Only) */}
+          <div className="hidden min-[1200px]:flex items-center justify-end w-fit shrink-0">
             {/* Buy Button */}
             <Link
               href="/tienda"
