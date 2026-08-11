@@ -683,6 +683,9 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.ml-\[50px\] {
+  margin-left: 50px;
+}
 .block {
   display: block;
 }
@@ -2082,6 +2085,10 @@ body {
 }
 
 @media (min-width: 1280px) {
+
+  .xl\:ml-\[70px\] {
+    margin-left: 70px;
+  }
 
   .xl\:px-12 {
     padding-left: 3rem;

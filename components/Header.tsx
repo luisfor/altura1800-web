@@ -86,7 +86,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden min-[1200px]:flex flex-1 justify-center items-center gap-[27px] font-sans text-[10px] font-medium tracking-[0.03em] uppercase leading-none mx-8">
+          <nav className="hidden min-[1200px]:flex flex-1 justify-start items-center gap-[27px] font-sans text-[10px] font-medium tracking-[0.03em] uppercase leading-none ml-[50px] xl:ml-[70px]">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
