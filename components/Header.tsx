@@ -71,7 +71,7 @@ export default function Header() {
         <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 py-2 md:py-3 flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', width: 'fit-content', flexShrink: 0 }}>
+          <Link href="/" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', width: 'fit-content', flexShrink: 0, marginTop: '-12px' }}>
             <img src="/logo_cropped.png" alt="Altura 1800" style={{ width: '60px', height: '72px', objectFit: 'contain', flexShrink: 0 }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 'max-content', lineHeight: 1 }}>
