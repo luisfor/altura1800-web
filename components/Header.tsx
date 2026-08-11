@@ -28,11 +28,11 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
       {/* Top Bar */}
-      <div className="w-full bg-[#000000] py-2 border-b border-cream/5 hidden md:block">
+      <div className="w-full bg-[#000000] py-2 hidden md:block">
         <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 grid grid-cols-3 items-center">
           <div className="col-span-1"></div>
           <div className="col-span-1 text-center flex justify-center">
-            <p className="text-[7px] lg:text-[9px] tracking-[0.1em] lg:tracking-[0.2em] text-gold uppercase font-light whitespace-nowrap">
+            <p className="text-[7px] lg:text-[9px] tracking-[0.1em] lg:tracking-[0.2em] text-[#9B793B] uppercase font-light whitespace-nowrap">
               ENVÍOS A TODO COLOMBIA <span className="mx-1 lg:mx-2 text-cream/20">|</span> PAGOS 100% SEGUROS
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="w-full bg-[#0B0D0C] border-b border-cream/5 shadow-2xl">
+      <div className="w-full bg-[#000000]">
         <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 py-3 md:py-4 flex items-center justify-between">
           
           {/* Logo */}
@@ -93,12 +93,9 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative transition-colors duration-200 ease-in-out whitespace-nowrap ${isActive ? 'text-[#C6A15B]' : 'text-[#E8E4DC] hover:text-[#C6A15B]'}`}
+                  className={`transition-colors duration-200 ease-in-out whitespace-nowrap ${isActive ? 'text-[#C6A15B]' : 'text-[#E8E4DC] hover:text-[#C6A15B]'}`}
                 >
                   {link.label}
-                  {isActive && (
-                    <span className="absolute left-0 right-0 -bottom-[8px] h-[2px] bg-[#C6A15B]" />
-                  )}
                 </Link>
               );
             })}
@@ -109,7 +106,7 @@ export default function Header() {
             {/* Buy Button */}
             <Link
               href="/tienda"
-              className="px-[20px] h-[36px] flex items-center justify-center bg-[#C6A15B] text-[#FFFFFF] text-[10px] font-semibold tracking-[0.06em] uppercase rounded-[18px] hover:bg-opacity-90 transition-all whitespace-nowrap"
+              className="px-[20px] h-[36px] flex items-center justify-center bg-[#C6A15B] text-[#FFFDF7] text-[10px] font-semibold tracking-[0.06em] uppercase rounded-[18px] hover:bg-opacity-90 transition-all whitespace-nowrap"
             >
               COMPRAR AHORA
             </Link>
@@ -117,18 +114,18 @@ export default function Header() {
 
           {/* Mobile Nav Toggle */}
           <div className="flex min-[1200px]:hidden items-center gap-4">
-            <Link href="/carrito" className="relative text-cream hover:text-gold transition-colors">
+            <Link href="/carrito" className="relative text-[#E8E4DC] hover:text-[#C6A15B] transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
               </svg>
               {count > 0 && (
-                <span className="absolute -top-2 -right-2 bg-gold text-ink text-[9px] rounded-full w-4 h-4 flex items-center justify-center font-bold">
+                <span className="absolute -top-2 -right-2 bg-[#C6A15B] text-[#FFFDF7] text-[9px] rounded-full w-4 h-4 flex items-center justify-center font-bold">
                   {count}
                 </span>
               )}
             </Link>
             <button
-              className="text-cream text-[11px] tracking-[0.15em] uppercase border border-cream/20 px-3 py-1 rounded"
+              className="text-[#E8E4DC] hover:text-[#C6A15B] transition-colors text-[11px] tracking-[0.15em] uppercase px-3 py-1 rounded"
               onClick={() => setOpen(!open)}
             >
               Menú
@@ -140,24 +137,24 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {open && (
-        <nav className="min-[1200px]:hidden border-t border-cream/10 px-6 py-4 flex flex-col gap-6 text-[11px] tracking-[0.15em] uppercase text-cream/70 bg-[#0F0E0D]">
+        <nav className="min-[1200px]:hidden px-6 py-4 flex flex-col gap-6 text-[11px] tracking-[0.15em] uppercase text-[#E8E4DC]/70 bg-[#000000]">
           {links.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`${isActive ? 'text-gold font-bold' : 'hover:text-cream'} transition-colors`}
+                className={`${isActive ? 'text-[#C6A15B] font-bold' : 'hover:text-[#E8E4DC]'} transition-colors`}
               >
                 {link.label}
               </Link>
             );
           })}
-          <div className="border-t border-cream/10 pt-4 flex flex-col gap-4">
-            <Link href="/mi-cuenta" className="hover:text-cream transition-colors">Mi Cuenta</Link>
+          <div className="pt-4 flex flex-col gap-4">
+            <Link href="/mi-cuenta" className="hover:text-[#E8E4DC] transition-colors">Mi Cuenta</Link>
             <Link
               href="/tienda"
-              className="text-center py-3 bg-gold text-ink font-bold rounded-full uppercase tracking-[0.2em]"
+              className="text-center py-3 bg-[#C6A15B] text-[#FFFDF7] font-bold rounded-full uppercase tracking-[0.2em] hover:bg-opacity-90 transition-all"
             >
               COMPRAR AHORA
             </Link>
